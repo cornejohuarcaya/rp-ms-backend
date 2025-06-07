@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "884d276c-b31c-47a5-aa72-4310e531860b",
+		"name": "Unir Relatos Papel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3419163"
+	},
+	"item": [
+		{
+			"name": "Gateway POST",
+			"item": [
+				{
+					"name": "Nuevo libro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"targetMethod\":\"POST\",\r\n    \"queryParams\": {   },\r\n    \"body\": { \r\n            \"titulo\": \"Libro 2\",\r\n            \"autor\": \"Autor 1\",\r\n            \"fechaPublicacion\": \"2025-06-06T02:06:59.965Z\",\r\n            \"categoria\": \"string\",\r\n            \"genero\": \"Cuento\",\r\n            \"codigoISBN\": \"10420111\",\r\n            \"stock\": 20,\r\n            \"resumen\": \"string\",\r\n            \"puntuacion\": 5,\r\n            \"tipo\": \"digital\",\r\n            \"habilitado\": true\r\n      }\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-catalogue/libros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-catalogue",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "todos los libros",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"GET\",\r\n    \"queryParams\": {        \r\n        \r\n        },\r\n    \"body\": {   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-catalogue/libros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-catalogue",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar libro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"GET\",\r\n    \"queryParams\": { \r\n        \"titulo\":[\"Viaje\"],\r\n        \"autor\":[\"Laura\"]  \r\n        \r\n        },\r\n    \"body\": {   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-catalogue/libros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-catalogue",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar libro ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"GET\",\r\n    \"queryParams\": {   },\r\n    \"body\": {   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-catalogue/libros/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-catalogue",
+								"libros",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar libro ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"DELETE\",\r\n    \"queryParams\": {   },\r\n    \"body\": {   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-catalogue/libros/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-catalogue",
+								"libros",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compra nueva",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"POST\",\r\n    \"queryParams\": {   },\r\n    \"body\": { \r\n\r\n        \"libros\": [\r\n    {\r\n      \"idLibro\": \"2\",\r\n      \"cantidad\": \"1\",\r\n      \"precioUnitario\": \"50\"\r\n    }\r\n \r\n \r\n  ],\r\n  \"direccion\": \"ICA\",\r\n  \"medioPago\": \"TARJETA CREDITO\",\r\n  \"idCliente\": \"1\"\r\n\r\n      }\r\n}\r\n\r\n\r\n\r\n  \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-payments/ordenes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-payments",
+								"ordenes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todas las compras",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"GET\",\r\n    \"queryParams\": {   },\r\n    \"body\": {\r\n      }\r\n}\r\n\r\n\r\n\r\n  \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-payments/ordenes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-payments",
+								"ordenes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar compras ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"GET\",\r\n    \"queryParams\": {   },\r\n    \"body\": {\r\n      }\r\n}\r\n\r\n\r\n\r\n  \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-payments/ordenes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-payments",
+								"ordenes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update libro parcial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"PATCH\",\r\n    \"queryParams\": {   },\r\n    \"body\": {\r\n        \"titulo\": \"TITULO LIBRO 1\"\r\n\r\n      }\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-catalogue/libros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-catalogue",
+								"libros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update libro total",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targetMethod\":\"PUT\",\r\n    \"queryParams\": {   },\r\n    \"body\": {\r\n          \"titulo\": \"Libro 2\",\r\n            \"autor\": \"Autor 1\",\r\n            \"fechaPublicacion\": \"2025-06-06T02:06:59.965Z\",\r\n            \"categoria\": \"string\",\r\n            \"genero\": \"Cuento\",\r\n            \"codigoISBN\": \"10420111\",\r\n            \"stock\": 20,\r\n            \"resumen\": \"string\",\r\n            \"puntuacion\": 5,\r\n            \"tipo\": \"digital\",\r\n            \"habilitado\": true\r\n      }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-catalogue/libros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-catalogue",
+								"libros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "obtener Libros",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "?titulo=Viaje&autor=Laura",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/libros",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/libros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"libros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/libros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"libros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nuevo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Libro 1\",\r\n  \"autor\": \"Autor 1\",\r\n  \"fechaPublicacion\": \"2025-06-06T02:06:59.965Z\",\r\n  \"categoria\": \"string\",\r\n  \"genero\": \"Cuento\",\r\n  \"codigoISBN\": \"10420111\",\r\n  \"stock\": 20,\r\n  \"resumen\": \"string\",\r\n  \"puntuacion\": 5,\r\n  \"tipo\": \"digital\",\r\n  \"habilitado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/libros",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update parcial",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"TITULO LIBRO 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/libros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"libros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update total",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"TITULO LIBRO 1\",\r\n  \"autor\": \"Autor 1\",\r\n  \"fechaPublicacion\": \"2025-06-06T02:06:59.965Z\",\r\n  \"categoria\": \"string\",\r\n  \"genero\": \"Cuento\",\r\n  \"codigoISBN\": \"10420111\",\r\n  \"stock\": 20,\r\n  \"resumen\": \"string\",\r\n  \"puntuacion\": 5,\r\n  \"tipo\": \"digital\",\r\n  \"habilitado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/libros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"libros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway obtener Libros Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8762/rp-ms-books-catalogue/libros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"rp-ms-books-catalogue",
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway comprar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"libros\": [\r\n    {\r\n      \"idLibro\": \"4\",\r\n      \"cantidad\": \"4\",\r\n      \"precioUnitario\": \"50\"\r\n    }\r\n \r\n \r\n  ],\r\n  \"direccion\": \"ICA\",\r\n  \"medioPago\": \"TARJETA CREDITO\",\r\n  \"idCliente\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8762/rp-ms-books-payments/ordenes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"rp-ms-books-payments",
+						"ordenes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway ver compra",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"libros\": [\r\n    {\r\n      \"idLibro\": \"1\",\r\n      \"cantidad\": \"2\",\r\n      \"precioUnitario\": \"50\"\r\n    }\r\n  ],\r\n  \"direccion\": \"ICA\",\r\n  \"medioPago\": \"TARJETA CREDITO\",\r\n  \"idCliente\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8762/rp-ms-books-payments/ordenes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8762",
+							"path": [
+								"rp-ms-books-payments",
+								"ordenes"
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": ""
+				}
+			]
+		}
+	]
+}
