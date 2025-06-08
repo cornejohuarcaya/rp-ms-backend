@@ -3,7 +3,7 @@ eureka -> servidor de registro
 
 books-catalogue -> crud de libros
 
-books-payments -> gestión de compra de libros y actualización del stock de los libros
+books-payments -> gestión de compra de libros y actualización del stock de los libros, se debe crear uan base de datos llamada 
 
 gateway ->proxy inverso
 
