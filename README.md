@@ -1,5 +1,5 @@
 # Requerimientos 
-**Como único requerimiento se debe crear uan base de datos llamada compras y cambiar las credenciales en el archivo properties.yml de rp_ms-books-payments**
+**Como único requerimiento se debe crear una base de datos llamada compras y cambiar las credenciales en el archivo properties.yml de rp_ms-books-payments**
 
 # Se carga 5 proyectos
 eureka -> servidor de registro
