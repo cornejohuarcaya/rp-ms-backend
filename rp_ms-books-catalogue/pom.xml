@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rp</groupId>
-	<artifactId>rp_ms-books-catalogue</artifactId>
+	<artifactId>rp-ms-books-catalogue</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rp_ms-books-catalogue</name>
 	<description>Demo project for Spring Boot</description>
